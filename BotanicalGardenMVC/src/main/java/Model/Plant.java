@@ -19,8 +19,10 @@ public class Plant {
     private String species;
     @Column(name = "planta_carnivora", nullable = false, columnDefinition = "CHAR(2) CHECK (planta_carnivora IN ('Da', 'Nu')")
     private String carnivorous;
-    @Column(name = "zona_gradina_botanica", nullable = false, columnDefinition = "CHAR(1) CHECK (my_column IN ('A', 'B', 'C', 'D'))")
+    @Column(name = "zona_gradina_botanica", nullable = false, columnDefinition = "CHAR(1) CHECK (zona_gradina_botanica IN ('A', 'B', 'C', 'D'))")
     private String zone;
+
+    public Plant() {}
 
     public Plant(String name, String type, String species, String carnivorous, String zone) {
         this.name = name;
@@ -92,6 +94,5 @@ public class Plant {
         if (!carnivorous.equals(plant.carnivorous)) return false;
         return zone.equals(plant.zone);
     }
-
 
 }
