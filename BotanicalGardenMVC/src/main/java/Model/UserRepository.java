@@ -46,37 +46,44 @@ public class UserRepository {
             session.update(userToUpdate);
             tx.commit();
             updated = true;
+
         } catch (HibernateException e) {
             tx.rollback();
+
         } finally {
             session.close();
         }
         return updated;
     }
 
-    public boolean deleteUser() {
+    public boolean deleteUser(Long userid) {
         boolean deleted = false;
         Session session = Repository.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
         try {
-            session.delete(user);
+            User userToDelete = session.get(User.class, userid);
+            session.delete(userToDelete);
             tx.commit();
             deleted = true;
+
         } catch (HibernateException e) {
             tx.rollback();
+
         } finally {
             session.close();
         }
         return deleted;
     }
 
+
     public User searchuser(String username, String password) {
         Session session = Repository.getSessionFactory().openSession();
         try {
-            Query<?> query = session.createQuery("FROM User WHERE user = :username AND password = :password");
+            Query query = session.createQuery("FROM User WHERE user = :username AND password = :password");
             query.setParameter("username", username);
             query.setParameter("password", password);
             return (User) query.uniqueResult();
+
         } finally {
             session.close();
         }
