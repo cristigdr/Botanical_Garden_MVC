@@ -1,6 +1,7 @@
 package Model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.Check;
 
 @Entity
 @Table(name="users")
@@ -13,8 +14,10 @@ public class User {
     private String user;
     @Column(name = "parola", nullable = false)
     private String password;
-    @Column(name = "rol", nullable = false, columnDefinition = "CHECK rol IN('administrator', 'angajat')")
+    @Column(name = "rol", nullable = false, columnDefinition = "VARCHAR(20)")
+    @Check(constraints = "rol IN ('administrator', 'angajat')")
     private String role;
+
 
     public User() {}
 
@@ -68,5 +71,4 @@ public class User {
         if (!password.equals(user1.password)) return false;
         return role.equals(user1.role);
     }
-    
 }
