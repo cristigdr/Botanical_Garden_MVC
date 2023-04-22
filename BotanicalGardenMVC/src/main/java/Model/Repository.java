@@ -9,7 +9,7 @@ public class Repository {
     private static SessionFactory buildSessionFactory() {
         try {
             Configuration configuration = new Configuration()
-                    .setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect")
+                    .setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect")
                     .setProperty("hibernate.connection.driver_class", "com.mysql.cj.jdbc.Driver")
                     .setProperty("hibernate.connection.url", "jdbc:mysql://localhost:3306/botanical_garden")
                     .setProperty("hibernate.connection.username", "root")
