@@ -76,8 +76,7 @@ public class UserRepository {
             Query<?> query = session.createQuery("FROM User WHERE user = :username AND password = :password");
             query.setParameter("username", username);
             query.setParameter("password", password);
-            User user = (User) query.uniqueResult();
-            return user;
+            return (User) query.uniqueResult();
         } finally {
             session.close();
         }
@@ -88,6 +87,16 @@ public class UserRepository {
         List<User> users = session.createQuery("from User", User.class).getResultList();
         session.close();
         return users;
+    }
+
+    public boolean checkIfUserExists(User user) {
+        List<User> users = getUsers();
+        for (User u : users) {
+            if (u.getUser().equals(user.getUser())) {
+                return true;
+            }
+        }
+        return false;
     }
 
 }
