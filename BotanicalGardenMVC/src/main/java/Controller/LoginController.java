@@ -6,6 +6,7 @@ import View.AdminView;
 import View.EmployeeView;
 import View.LoginView;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -49,14 +50,16 @@ public class LoginController {
 
 
         if (u == null)
-            System.out.println("User not found!");
+            mesajEroare();
         else{
             if(u.getRole().equals("admin"))
             {
+                mesajSucces();
                 setAdminView();
             }
             else if (u.getRole().equals("angajat"))
             {
+                mesajSucces();
                 setEmployeeView();
             }
 
@@ -64,10 +67,11 @@ public class LoginController {
     }
 
     private void btnCancelClick(ActionEvent e){
+        loginView.dispose();
     }
 
     private void btnGuestClick(ActionEvent e){
-
+        setEmployeeView();
     }
 
     public void setAdminView() {
@@ -78,5 +82,19 @@ public class LoginController {
     public void setEmployeeView() {
         EmployeeView adminView = new EmployeeView();
         loginView.dispose();
+    }
+
+    public void mesajEroare() {
+        JOptionPane.showMessageDialog(loginView,
+                "Utilizator sau parolă invalidă",
+                "Încearcă din nou",
+                JOptionPane.ERROR_MESSAGE);
+    }
+
+    public void mesajSucces() {
+        JOptionPane.showMessageDialog(loginView,
+                "Autentificare reușită!",
+                "Succes!",
+                JOptionPane.INFORMATION_MESSAGE);
     }
 }
