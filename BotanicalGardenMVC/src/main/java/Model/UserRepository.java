@@ -18,12 +18,12 @@ public class UserRepository {
         this.user = user;
     }
 
-    public boolean saveUser() {
+    public boolean saveUser(User u) {
         boolean saved = false;
         Session session = Repository.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
         try {
-            session.save(user);
+            session.save(u);
             tx.commit();
             saved = true;
         } catch (HibernateException e) {

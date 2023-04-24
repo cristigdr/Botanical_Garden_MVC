@@ -75,7 +75,7 @@ public class LoginController {
     }
 
     public void setAdminView() {
-        AdminView adminView = new AdminView();
+        AdminController adminController = new AdminController();
         loginView.dispose();
     }
 

@@ -1,6 +1,7 @@
 package View;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class AdminView extends JFrame{
@@ -14,18 +15,24 @@ public class AdminView extends JFrame{
     private JButton btnDelete;
     private JButton btnClean;
     private JTable tabUser;
+    private JScrollPane scrollPane;
+    private DefaultTableModel model = new DefaultTableModel();
+
 
     public AdminView() {
         super();
         setContentPane(mainPanelAdmin);
-        setTitle("Formular autentificare");
+        setTitle("Admin");
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setSize(700, 275);
         setMinimumSize(new Dimension(350, 150));
         setLocationRelativeTo(null);
-        setVisible(true);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        setVisible(true);
+    }
 
+    public DefaultTableModel getModel() {
+        return model;
     }
 
     public JPanel getMainPanelAdmin() {
@@ -66,5 +73,9 @@ public class AdminView extends JFrame{
 
     public JTable getTabUser() {
         return tabUser;
+    }
+
+    public JScrollPane getScrollPane() {
+        return scrollPane;
     }
 }
