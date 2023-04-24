@@ -32,11 +32,11 @@ public class GuestView extends JFrame{
         return mainPanelGuest;
     }
 
-    public JComboBox getComboBox1() {
+    public JComboBox getComboCriteria() {
         return comboCriteria;
     }
 
-    public JTextField getTextField1() {
+    public JTextField getTxtFilter() {
         return txtFilter;
     }
 

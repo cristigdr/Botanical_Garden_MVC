@@ -2,13 +2,9 @@ package Controller;
 
 import Model.Plant;
 import Model.PlantRepository;
-import Model.User;
 import View.GuestView;
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.List;
 
 public class GuestController {
@@ -22,7 +18,7 @@ public class GuestController {
 
         this.guestView.getBtnSearch().addActionListener(e -> searchClick());
 
-        this.guestView.getBtnRefresh().addActionListener(e -> refreshClick());
+        this.guestView.getBtnRefresh().addActionListener(e -> populateTable());
 
         this.guestView.getBtnClean().addActionListener(e -> cleanFieldsClick());
     }
@@ -33,7 +29,7 @@ public class GuestController {
         DefaultTableModel model = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int row, int column) {
-                return column != 0 && column != 3;
+                return column != 0 && column != 1 && column != 2 && column != 3 && column != 4 && column != 5;
             }
         };
 
@@ -50,11 +46,30 @@ public class GuestController {
         setTable(model);
     }
 
-    private void searchClick(){}
+    private void searchClick(){
+        List<Plant> plants = plantRepo.filterPlants(getCriteriaString(), guestView.getTxtFilter().getText());
 
-    private void refreshClick(){}
+        DefaultTableModel model = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return column != 0 && column != 1 && column != 2 && column != 3 && column != 4 && column != 5;
+            }
+        };
 
-    private void cleanFieldsClick(){}
+        model.addColumn("ID");
+        model.addColumn("Denumire");
+        model.addColumn("Tip");
+        model.addColumn("Specie");
+        model.addColumn("Planta Carnivora");
+        model.addColumn("Zona Gradina Botanica");
+
+        for (Plant p : plants) {
+            model.addRow(new Object[]{p.getId(), p.getName(), p.getType(), p.getSpecies(), p.getCarnivorous(), p.getZone()});
+        }
+        setTable(model);
+    }
+
+    private void cleanFieldsClick(){setFilter("");}
 
     private void setTable(DefaultTableModel model){
         guestView.getTabPlant().setModel(model);
@@ -62,4 +77,15 @@ public class GuestController {
         viewport.setView(guestView.getTabPlant());
         guestView.getScrollPane().setViewport(viewport);
     }
+
+    public String getCriteriaString(){
+        String data = null;
+        Object selectedItem = guestView.getComboCriteria().getSelectedItem();
+        if (selectedItem != null) {
+            data = selectedItem.toString();
+        }
+        return data;
+    }
+
+    private void setFilter(String filter){guestView.getTxtFilter().setText(filter);}
 }
