@@ -25,7 +25,7 @@ public class AdminView extends JFrame{
         setTitle("Admin");
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setSize(700, 275);
-        setMinimumSize(new Dimension(350, 150));
+        setMinimumSize(new Dimension(500, 400));
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setVisible(true);
@@ -78,4 +78,25 @@ public class AdminView extends JFrame{
     public JScrollPane getScrollPane() {
         return scrollPane;
     }
+
+    public int getTabRowIndex() {
+        return tabUser.getSelectedRow();
+    }
+
+    public String getTabId(int rowIndex) {
+        return tabUser.getValueAt(rowIndex, 0).toString();
+    }
+
+    public String getTabUser(int rowIndex) {
+        return tabUser.getValueAt(rowIndex, 1).toString();
+    }
+
+    public String getTabPassword(int rowIndex) {
+        return tabUser.getValueAt(rowIndex, 2).toString();
+    }
+
+    public String getTabRole(int rowIndex) {
+        return tabUser.getValueAt(rowIndex, 3).toString();
+    }
+
 }

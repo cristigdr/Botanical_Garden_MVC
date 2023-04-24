@@ -34,12 +34,12 @@ public class UserRepository {
         return saved;
     }
 
-    public boolean updateUser(User updatedUser) {
+    public boolean updateUser(User updatedUser, String userId) {
         boolean updated = false;
         Session session = Repository.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
         try {
-            User userToUpdate = session.get(User.class, updatedUser.getId());
+            User userToUpdate = session.get(User.class, userId);
             userToUpdate.setUser(updatedUser.getUser());
             userToUpdate.setPassword(updatedUser.getPassword());
             userToUpdate.setRole(updatedUser.getRole());
@@ -56,7 +56,7 @@ public class UserRepository {
         return updated;
     }
 
-    public boolean deleteUser(Long userid) {
+    public boolean deleteUser(String userid) {
         boolean deleted = false;
         Session session = Repository.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
