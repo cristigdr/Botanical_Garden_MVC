@@ -6,8 +6,8 @@ import java.awt.*;
 
 public class GuestView extends JFrame{
     private JPanel mainPanelGuest;
-    private JComboBox comboBox1;
-    private JTextField textField1;
+    private JComboBox comboCriteria;
+    private JTextField txtFilter;
     private JTable tabPlant;
     private JButton btnSearch;
     private JButton btnRefresh;
@@ -33,11 +33,11 @@ public class GuestView extends JFrame{
     }
 
     public JComboBox getComboBox1() {
-        return comboBox1;
+        return comboCriteria;
     }
 
     public JTextField getTextField1() {
-        return textField1;
+        return txtFilter;
     }
 
     public JTable getTabPlant() {

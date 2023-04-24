@@ -165,6 +165,7 @@ public class AdminController {
         adminView.getTabUser().setModel(model);
         JViewport viewport = new JViewport();
         viewport.setView(adminView.getTabUser());
-        adminView.getScrollPane().setViewport(viewport);    }
+        adminView.getScrollPane().setViewport(viewport);
+    }
 
 }
