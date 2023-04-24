@@ -80,7 +80,7 @@ public class LoginController {
     }
 
     public void setEmployeeView() {
-        EmployeeView adminView = new EmployeeView();
+        GuestController guestController = new GuestController();
         loginView.dispose();
     }
 
