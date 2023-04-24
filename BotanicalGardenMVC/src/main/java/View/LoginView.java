@@ -2,6 +2,8 @@ package View;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class LoginView extends JFrame{
     private JPanel mainPanelLogin;
@@ -21,6 +23,7 @@ public class LoginView extends JFrame{
         setLocationRelativeTo(null);
         setVisible(true);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+
     }
 
     public JPanel getMainPanelLogin() {
