@@ -18,7 +18,7 @@ public class PlantRepository {
         this.plant = plant;
     }
 
-    public boolean savePlant(){
+    public boolean savePlant(Plant plant){
         boolean saved = false;
         Session session = Repository.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
@@ -34,13 +34,13 @@ public class PlantRepository {
         return saved;
     }
 
-    public boolean updatePlant(Plant updatedPlant) {
+    public boolean updatePlant(Plant updatedPlant, String plantId) {
         boolean updated = false;
         Session session = Repository.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
 
         try {
-            Plant plantToUpdate = session.get(Plant.class, updatedPlant.getId());
+            Plant plantToUpdate = session.get(Plant.class, plantId);
             plantToUpdate.setName(updatedPlant.getName());
             plantToUpdate.setType(updatedPlant.getType());
             plantToUpdate.setSpecies(updatedPlant.getSpecies());
