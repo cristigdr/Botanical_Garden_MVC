@@ -136,7 +136,16 @@ public class EmployeeController {
         cleanFieldsClick();
     }
 
-    private void deletePlantClick(){}
+    private void deletePlantClick(){
+        boolean deleted = plantRepo.deletePlant(empView.getTxtId().getText());
+        if(deleted){
+            successMessage();
+        } else{
+            errorMessage();
+        }
+        refreshTable();
+        cleanFieldsClick();
+    }
 
     private void showSelectedRowData(){
         int row = empView.getTabRowIndex();

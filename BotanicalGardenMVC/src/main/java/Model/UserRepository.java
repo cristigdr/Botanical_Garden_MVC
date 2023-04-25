@@ -56,12 +56,12 @@ public class UserRepository {
         return updated;
     }
 
-    public boolean deleteUser(String userid) {
+    public boolean deleteUser(String userId) {
         boolean deleted = false;
         Session session = Repository.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
         try {
-            User userToDelete = session.get(User.class, userid);
+            User userToDelete = session.get(User.class, userId);
             session.delete(userToDelete);
             tx.commit();
             deleted = true;
