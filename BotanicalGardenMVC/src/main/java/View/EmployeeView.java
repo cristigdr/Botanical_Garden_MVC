@@ -34,10 +34,9 @@ public class EmployeeView extends JFrame{
     public EmployeeView() {
         super();
         setContentPane(mainPanelEmployee);
-        setTitle("Guest");
+        setTitle("Employee");
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        setSize(700, 275);
-        setMinimumSize(new Dimension(500, 400));
+        setSize(500, 600);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setVisible(true);

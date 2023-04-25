@@ -24,8 +24,7 @@ public class AdminView extends JFrame{
         setContentPane(mainPanelAdmin);
         setTitle("Admin");
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        setSize(700, 275);
-        setMinimumSize(new Dimension(500, 400));
+        setSize(500, 400);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setVisible(true);
