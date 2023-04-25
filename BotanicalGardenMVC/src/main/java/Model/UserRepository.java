@@ -99,7 +99,7 @@ public class UserRepository {
     public boolean checkIfUserExists(User user) {
         List<User> users = getUsers();
         for (User u : users) {
-            if (u.getUser().equals(user.getUser())) {
+            if (user.equals(u)) {
                 return true;
             }
         }

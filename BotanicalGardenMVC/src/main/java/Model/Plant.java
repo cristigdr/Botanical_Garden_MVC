@@ -3,7 +3,6 @@ package Model;
 import jakarta.persistence.*;
 import org.hibernate.annotations.Check;
 
-import java.util.Objects;
 
 @Entity
 @Table(name = "plants")

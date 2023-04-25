@@ -63,9 +63,9 @@ public class User {
 
         User user1 = (User) o;
 
-        if (!id.equals(user1.id)) return false;
         if (!user.equals(user1.user)) return false;
         if (!password.equals(user1.password)) return false;
         return role.equals(user1.role);
     }
+
 }
