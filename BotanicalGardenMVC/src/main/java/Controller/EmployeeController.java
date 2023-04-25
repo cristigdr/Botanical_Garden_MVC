@@ -20,6 +20,13 @@ public class EmployeeController {
         this.empView = new EmployeeView();
         populateTable();
 
+        empView.getDaRadioButton().setActionCommand("Da");
+        empView.getNuRadioButton().setActionCommand("Nu");
+        empView.getaRadioButton().setActionCommand("A");
+        empView.getbRadioButton().setActionCommand("B");
+        empView.getcRadioButton().setActionCommand("C");
+        empView.getdRadioButton().setActionCommand("D");
+
         this.empView.getBtnSearch().addActionListener(e -> searchClick());
         this.empView.getBtnRefresh().addActionListener(e -> populateTable());
         this.empView.getBtnClean().addActionListener(e -> cleanFieldsClick());
