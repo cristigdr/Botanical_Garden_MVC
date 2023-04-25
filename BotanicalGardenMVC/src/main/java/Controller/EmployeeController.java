@@ -62,7 +62,27 @@ public class EmployeeController {
         setTable(model);
     }
 
-    private void searchClick(){}
+    private void searchClick(){List<Plant> plants = plantRepo.filterPlants(getCriteriaString(), empView.getTxtFilter().getText());
+
+        DefaultTableModel model = new DefaultTableModel() {
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return column != 0 && column != 1 && column != 2 && column != 3 && column != 4 && column != 5;
+            }
+        };
+
+        model.addColumn("ID");
+        model.addColumn("Denumire");
+        model.addColumn("Tip");
+        model.addColumn("Specie");
+        model.addColumn("Planta Carnivora");
+        model.addColumn("Zona Gradina Botanica");
+
+        for (Plant p : plants) {
+            model.addRow(new Object[]{p.getId(), p.getName(), p.getType(), p.getSpecies(), p.getCarnivorous(), p.getZone()});
+        }
+        setTable(model);
+    }
 
     private void cleanFieldsClick(){}
 
@@ -81,5 +101,14 @@ public class EmployeeController {
         JViewport viewport = new JViewport();
         viewport.setView(empView.getTabPlant());
         empView.getScrollPane().setViewport(viewport);
+    }
+
+    public String getCriteriaString(){
+        String data = null;
+        Object selectedItem = empView.getComboCriteria().getSelectedItem();
+        if (selectedItem != null) {
+            data = selectedItem.toString();
+        }
+        return data;
     }
 }
