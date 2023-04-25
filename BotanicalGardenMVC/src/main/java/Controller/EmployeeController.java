@@ -2,6 +2,7 @@ package Controller;
 
 import Model.Plant;
 import Model.PlantRepository;
+import Model.User;
 import View.EmployeeView;
 import View.GuestView;
 
@@ -9,6 +10,7 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Enumeration;
 import java.util.List;
 
 public class EmployeeController {
@@ -101,7 +103,21 @@ public class EmployeeController {
         setZone(false);
     }
 
-    private void insertPlantClick(){}
+    private void insertPlantClick(){
+        Plant p = new Plant(empView.getTxtName().getText(), empView.getTxtType().getText(), empView.getTxtSpecies().getText(), getStringCarn(), getSTringZone());
+
+        if(plantRepo.checkIfPlantExists(p)){
+            errorMessage();
+        }else{
+            boolean inserted = plantRepo.savePlant(p);
+            if(inserted){
+                successMessage();
+            } else {
+                errorMessage();
+            }
+        }
+        refreshTable();
+        cleanFieldsClick();}
 
     private void updatePlantClick(){}
 
@@ -146,6 +162,33 @@ public class EmployeeController {
         }
         return data;
     }
+
+    public String getStringCarn() {
+        {
+            for (Enumeration<AbstractButton> buttons = empView.getBtnGrCarnivorous().getElements(); buttons.hasMoreElements(); ) {
+                AbstractButton button = buttons.nextElement();
+
+                if (button.isSelected()) {
+                    return button.getText();
+                }
+            }
+            return "";
+        }
+    }
+
+    public String getSTringZone() {
+        {
+            for (Enumeration<AbstractButton> buttons = empView.getBtnGrZone().getElements(); buttons.hasMoreElements(); ) {
+                AbstractButton button = buttons.nextElement();
+
+                if (button.isSelected()) {
+                    return button.getText();
+                }
+            }
+            return "";
+        }
+    }
+
 
     private void setFilter(String filter){empView.getTxtFilter().setText(filter);}
     private void setId(String id){empView.getTxtId().setText(id);}
