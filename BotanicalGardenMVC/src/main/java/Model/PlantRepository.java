@@ -59,13 +59,13 @@ public class PlantRepository {
         return updated;
     }
 
-    public boolean deletePlant(Long id) {
+    public boolean deletePlant(String plantId) {
         boolean deleted = false;
         Session session = Repository.getSessionFactory().openSession();
         Transaction tx = session.beginTransaction();
 
         try {
-            Plant plantToDelete = session.get(Plant.class, id);
+            Plant plantToDelete = session.get(Plant.class, plantId);
             if (plantToDelete != null) {
                 session.delete(plantToDelete);
                 tx.commit();
