@@ -111,7 +111,7 @@ public class PlantRepository {
     public boolean checkIfPlantExists(Plant plant) {
         List<Plant> plants = getPlants();
         for (Plant p : plants) {
-            if (p.getName().equals(plant.getName())) {
+            if (plant.equals(p)) {
                 return true;
             }
         }

@@ -90,7 +90,6 @@ public class Plant {
 
         Plant plant = (Plant) o;
 
-        if (!id.equals(plant.id)) return false;
         if (!name.equals(plant.name)) return false;
         if (!type.equals(plant.type)) return false;
         if (!species.equals(plant.species)) return false;
