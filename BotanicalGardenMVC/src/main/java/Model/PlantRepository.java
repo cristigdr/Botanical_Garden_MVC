@@ -3,6 +3,7 @@ package Model;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.query.NativeQuery;
 import org.hibernate.query.Query;
 
 import java.util.List;
@@ -91,9 +92,10 @@ public class PlantRepository {
         Transaction tx = session.beginTransaction();
         List<Plant> plants = null;
         try {
-            Query query = session.createQuery("FROM Plant WHERE " + criteria + " = :filter");
-            query.setParameter("filter", filter);
-            plants = query.list();
+            String sql = "SELECT * FROM plants WHERE " + criteria + " LIKE :filter";
+            NativeQuery<Plant> query = session.createNativeQuery(sql, Plant.class);
+            query.setParameter("filter", "%" + filter + "%");
+            plants = query.getResultList();
             tx.commit();
         } catch (Exception e) {
             if (tx != null) {
