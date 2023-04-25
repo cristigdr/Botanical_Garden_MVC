@@ -123,6 +123,12 @@ public class EmployeeController {
         setBtnGrZone(zone);
     }
 
+    private void refreshTable(){
+        setRowCount(0);
+        populateTable();
+    }
+
+    private void setRowCount(int count){empView.getModel().setRowCount(count);}
 
 
     private void setTable(DefaultTableModel model){
