@@ -381,11 +381,11 @@
     </children>
   </grid>
   <buttonGroups>
-    <group name="btnGrCarnivorous">
+    <group name="btnGrCarnivorous" bound="true">
       <member id="6100"/>
       <member id="2856d"/>
     </group>
-    <group name="btnGrZone">
+    <group name="btnGrZone" bound="true">
       <member id="56f0a"/>
       <member id="2f1ba"/>
       <member id="263d1"/>

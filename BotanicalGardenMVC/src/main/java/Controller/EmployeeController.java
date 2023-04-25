@@ -84,7 +84,15 @@ public class EmployeeController {
         setTable(model);
     }
 
-    private void cleanFieldsClick(){}
+    private void cleanFieldsClick(){
+        setId("");
+        setName("");
+        setType("");
+        setSpecies("");
+        setFilter("");
+        setCarnivorous(false);
+        setZone(false);
+    }
 
     private void insertPlantClick(){}
 
@@ -111,4 +119,31 @@ public class EmployeeController {
         }
         return data;
     }
+
+    private void setFilter(String filter){empView.getTxtFilter().setText(filter);}
+    private void setId(String id){empView.getTxtId().setText(id);}
+    private void setName(String name){empView.getTxtName().setText(name);}
+    private void setType(String type){empView.getTxtType().setText(type);}
+    private void setSpecies(String species){empView.getTxtSpecies().setText(species);}
+
+    private void setCarnivorous(boolean bool){
+        ButtonModel buttonModel = null;
+        empView.getBtnGrCarnivorous().setSelected(buttonModel, bool);
+        if(bool){
+            empView.getBtnGrCarnivorous().setSelected(buttonModel, true);
+        } else {
+            empView.getBtnGrCarnivorous().clearSelection();
+        }
+    }
+
+    private void setZone(boolean bool){
+        ButtonModel buttonModel = null;
+        empView.getBtnGrZone().setSelected(buttonModel, bool);
+        if(bool){
+            empView.getBtnGrZone().setSelected(buttonModel, true);
+        } else {
+            empView.getBtnGrZone().clearSelection();
+        }
+    }
+
 }

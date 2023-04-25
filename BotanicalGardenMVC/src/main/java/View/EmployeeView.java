@@ -26,6 +26,8 @@ public class EmployeeView extends JFrame{
     private JButton btnUpdate;
     private JButton btnDelete;
     private JScrollPane scrollPane;
+    private ButtonGroup btnGrZone;
+    private ButtonGroup btnGrCarnivorous;
     private DefaultTableModel model = new DefaultTableModel();
 
 
@@ -128,4 +130,37 @@ public class EmployeeView extends JFrame{
     public DefaultTableModel getModel() {
         return model;
     }
+
+    public ButtonGroup getBtnGrZone() {
+        return btnGrZone;
+    }
+
+    public ButtonGroup getBtnGrCarnivorous() {
+        return btnGrCarnivorous;
+    }
+
+    public int getTabRowIndex() {
+        return tabPlant.getSelectedRow();
+    }
+
+    public String getTabId(int rowIndex) {
+        return tabPlant.getValueAt(rowIndex, 0).toString();
+    }
+    public String getTabName(int rowIndex) {
+        return tabPlant.getValueAt(rowIndex, 1).toString();
+    }
+    public String getTabType(int rowIndex) {
+        return tabPlant.getValueAt(rowIndex, 2).toString();
+    }
+    public String getTabSpecies(int rowIndex) {
+        return tabPlant.getValueAt(rowIndex, 3).toString();
+    }
+    public String getTabCarnivorous(int rowIndex) {
+        return tabPlant.getValueAt(rowIndex, 4).toString();
+    }
+    public String getTabZone(int rowIndex) {
+        return tabPlant.getValueAt(rowIndex, 5).toString();
+    }
+
+
 }
