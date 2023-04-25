@@ -71,7 +71,7 @@ public class LoginController {
     }
 
     private void btnGuestClick(ActionEvent e){
-        setEmployeeView();
+        setGuestView();
     }
 
     public void setAdminView() {
@@ -80,6 +80,11 @@ public class LoginController {
     }
 
     public void setEmployeeView() {
+        EmployeeController empController = new EmployeeController();
+        loginView.dispose();
+    }
+
+    public void setGuestView() {
         GuestController guestController = new GuestController();
         loginView.dispose();
     }
