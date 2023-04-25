@@ -119,7 +119,22 @@ public class EmployeeController {
         refreshTable();
         cleanFieldsClick();}
 
-    private void updatePlantClick(){}
+    private void updatePlantClick(){
+        Plant p = new Plant(empView.getTxtName().getText(), empView.getTxtType().getText(), empView.getTxtSpecies().getText(), getStringCarn(), getSTringZone());
+
+        if(plantRepo.checkIfPlantExists(p)){
+            errorMessage();
+        }else{
+            boolean updated = plantRepo.updatePlant(p, empView.getTxtId().getText());
+            if(updated){
+                successMessage();
+            } else {
+                errorMessage();
+            }
+        }
+        refreshTable();
+        cleanFieldsClick();
+    }
 
     private void deletePlantClick(){}
 
