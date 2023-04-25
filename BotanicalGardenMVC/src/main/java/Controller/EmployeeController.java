@@ -107,7 +107,21 @@ public class EmployeeController {
 
     private void deletePlantClick(){}
 
-    private void showSelectedRowData(){}
+    private void showSelectedRowData(){
+        int row = empView.getTabRowIndex();
+        String id = empView.getTabId(row);
+        String name = empView.getTabName(row);
+        String type = empView.getTabType(row);
+        String species = empView.getTabSpecies(row);
+        String carnivorous = empView.getTabCarnivorous(row);
+        String zone = empView.getTabZone(row);
+        setId(id);
+        setName(name);
+        setType(type);
+        setSpecies(species);
+        setBtnGrCarn(carnivorous);
+        setBtnGrZone(zone);
+    }
 
 
 
@@ -150,6 +164,26 @@ public class EmployeeController {
             empView.getBtnGrZone().setSelected(buttonModel, true);
         } else {
             empView.getBtnGrZone().clearSelection();
+        }
+    }
+
+    public void setBtnGrCarn(String carn) {
+        if (carn.equals("Da")) {
+            empView.getDaRadioButton().setSelected(true);
+        } else if (carn.equals("Nu")) {
+            empView.getNuRadioButton().setSelected(true);
+        }
+    }
+
+    public void setBtnGrZone(String zone) {
+        if (zone.equals("A")) {
+            empView.getaRadioButton().setSelected(true);
+        } else if (zone.equals("B")) {
+            empView.getbRadioButton().setSelected(true);
+        } else if (zone.equals("C")) {
+            empView.getcRadioButton().setSelected(true);
+        } else if (zone.equals("D")) {
+            empView.getdRadioButton().setSelected(true);
         }
     }
 
