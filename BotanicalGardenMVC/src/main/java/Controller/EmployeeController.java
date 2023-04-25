@@ -187,4 +187,18 @@ public class EmployeeController {
         }
     }
 
+    private void errorMessage() {
+        JOptionPane.showMessageDialog(empView,
+                "Operație invalidă",
+                "Încearcă din nou",
+                JOptionPane.ERROR_MESSAGE);
+    }
+
+    private void successMessage() {
+        JOptionPane.showMessageDialog(empView,
+                "Operație reușită!",
+                "Succes!",
+                JOptionPane.INFORMATION_MESSAGE);
+    }
+
 }
