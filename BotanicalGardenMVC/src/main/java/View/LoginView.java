@@ -32,6 +32,22 @@ public class LoginView extends JFrame{
 
     }
 
+    public JButton getBtnRo() {
+        return btnRo;
+    }
+
+    public JButton getBtnEn() {
+        return btnEn;
+    }
+
+    public JButton getBtnEs() {
+        return btnEs;
+    }
+
+    public JButton getBtnFr() {
+        return btnFr;
+    }
+
     public JPanel getMainPanelLogin() {
         return mainPanelLogin;
     }
