@@ -16,7 +16,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="4194f" class="javax.swing.JLabel">
+          <component id="4194f" class="javax.swing.JLabel" binding="welcomeLabel">
             <constraints>
               <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -97,7 +97,7 @@
               </model>
             </properties>
           </component>
-          <component id="4d504" class="javax.swing.JLabel">
+          <component id="4d504" class="javax.swing.JLabel" binding="idLabel">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -106,7 +106,7 @@
               <text value="Id:"/>
             </properties>
           </component>
-          <component id="e80e2" class="javax.swing.JLabel">
+          <component id="e80e2" class="javax.swing.JLabel" binding="userLabel">
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -115,7 +115,7 @@
               <text value="Utilizator:"/>
             </properties>
           </component>
-          <component id="a54ee" class="javax.swing.JLabel">
+          <component id="a54ee" class="javax.swing.JLabel" binding="passwordLabel">
             <constraints>
               <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -124,7 +124,7 @@
               <text value="Parolă:"/>
             </properties>
           </component>
-          <component id="20973" class="javax.swing.JLabel">
+          <component id="20973" class="javax.swing.JLabel" binding="roleLabel">
             <constraints>
               <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -133,7 +133,7 @@
               <text value="Rol:"/>
             </properties>
           </component>
-          <component id="59d44" class="javax.swing.JLabel">
+          <component id="59d44" class="javax.swing.JLabel" binding="addUserLabel">
             <constraints>
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>

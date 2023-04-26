@@ -2,7 +2,6 @@ package View;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
 
 public class AdminView extends JFrame{
     private JPanel mainPanelAdmin;
@@ -20,6 +19,12 @@ public class AdminView extends JFrame{
     private JButton btnEn;
     private JButton btnEs;
     private JButton btnFr;
+    private JLabel welcomeLabel;
+    private JLabel idLabel;
+    private JLabel userLabel;
+    private JLabel passwordLabel;
+    private JLabel roleLabel;
+    private JLabel addUserLabel;
     private DefaultTableModel model = new DefaultTableModel();
 
 
@@ -102,4 +107,43 @@ public class AdminView extends JFrame{
         return tabUser.getValueAt(rowIndex, 3).toString();
     }
 
+    public JButton getBtnRo() {
+        return btnRo;
+    }
+
+    public JButton getBtnEn() {
+        return btnEn;
+    }
+
+    public JButton getBtnEs() {
+        return btnEs;
+    }
+
+    public JButton getBtnFr() {
+        return btnFr;
+    }
+
+    public JLabel getWelcomeLabel() {
+        return welcomeLabel;
+    }
+
+    public JLabel getIdLabel() {
+        return idLabel;
+    }
+
+    public JLabel getUserLabel() {
+        return userLabel;
+    }
+
+    public JLabel getPasswordLabel() {
+        return passwordLabel;
+    }
+
+    public JLabel getRoleLabel() {
+        return roleLabel;
+    }
+
+    public JLabel getAddUserLabel() {
+        return addUserLabel;
+    }
 }

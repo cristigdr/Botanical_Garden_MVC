@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Language;
 import Model.User;
 import Model.UserRepository;
 import View.AdminView;
@@ -7,18 +8,26 @@ import View.AdminView;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
-public class AdminController {
+public class AdminController implements Observer {
 
     private UserRepository userRepo;
     private AdminView adminView;
+    private Language language;
+
 
     public AdminController() {
         this.userRepo = new UserRepository();
         this.adminView = new AdminView();
+        this.language = new Language();
+        language.addObserver(this);
+
         populateTable();
 
         this.adminView.getBtnInsert().addActionListener(this::insertUserClick);
@@ -36,6 +45,15 @@ public class AdminController {
                 showSelectedRowData();
             }
         });
+        this.adminView.getBtnRo().addActionListener(e -> language.setLanguage("ro"));
+
+        this.adminView.getBtnEn().addActionListener(e -> language.setLanguage("en"));
+
+        this.adminView.getBtnEs().addActionListener(e -> language.setLanguage("es"));
+
+        this.adminView.getBtnFr().addActionListener(e -> language.setLanguage("fr"));
+
+        updateView();
     }
 
     private void insertUserClick(ActionEvent e){
@@ -166,6 +184,23 @@ public class AdminController {
         JViewport viewport = new JViewport();
         viewport.setView(adminView.getTabUser());
         adminView.getScrollPane().setViewport(viewport);
+    }
+
+    public void update(Observable o, Object arg) {
+        updateView();
+    }
+
+    private void updateView() {
+        adminView.getWelcomeLabel().setText((language.getString("welcomeLabel")));
+        adminView.getAddUserLabel().setText((language.getString("addUserLabel")));
+        adminView.getIdLabel().setText((language.getString("idLabel")));
+        adminView.getUserLabel().setText((language.getString("userLabel")));
+        adminView.getPasswordLabel().setText((language.getString("passwordLabel")));
+        adminView.getRoleLabel().setText((language.getString("roleLabel")));
+        adminView.getBtnInsert().setText(language.getString("insertButton"));
+        adminView.getBtnUpdate().setText(language.getString("updateButton"));
+        adminView.getBtnDelete().setText(language.getString("deleteButton"));
+        adminView.getBtnClean().setText(language.getString("cleanButton"));
     }
 
 }
