@@ -2,8 +2,6 @@ package View;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class LoginView extends JFrame{
     private JPanel mainPanelLogin;
@@ -16,13 +14,17 @@ public class LoginView extends JFrame{
     private JLabel plzLoginLabel;
     private JLabel userLoginLabel;
     private JLabel passwordLoginLabel;
+    private JButton roBtn;
+    private JButton button1;
+    private JButton button2;
+    private JButton button3;
 
     public LoginView() {
         super();
         setContentPane(mainPanelLogin);
         setTitle("Formular autentificare");
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        setSize(700, 275);
+        setSize(700, 325);
         setMinimumSize(new Dimension(350, 150));
         setLocationRelativeTo(null);
         setVisible(true);
