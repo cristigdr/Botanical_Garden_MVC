@@ -16,6 +16,10 @@ public class GuestView extends JFrame{
     private JButton btnEn;
     private JButton btnEs;
     private JButton btnFr;
+    private JLabel welcomeLabel;
+    private JLabel filterDataLabel;
+    private JLabel criteriaLabel;
+    private JLabel filterLabel;
     private DefaultTableModel model = new DefaultTableModel();
 
 
@@ -64,5 +68,37 @@ public class GuestView extends JFrame{
 
     public DefaultTableModel getModel() {
         return model;
+    }
+
+    public JButton getBtnRo() {
+        return btnRo;
+    }
+
+    public JButton getBtnEn() {
+        return btnEn;
+    }
+
+    public JButton getBtnEs() {
+        return btnEs;
+    }
+
+    public JButton getBtnFr() {
+        return btnFr;
+    }
+
+    public JLabel getWelcomeLabel() {
+        return welcomeLabel;
+    }
+
+    public JLabel getFilterDataLabel() {
+        return filterDataLabel;
+    }
+
+    public JLabel getCriteriaLabel() {
+        return criteriaLabel;
+    }
+
+    public JLabel getFilterLabel() {
+        return filterLabel;
     }
 }

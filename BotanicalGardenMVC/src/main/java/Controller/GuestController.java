@@ -1,19 +1,26 @@
 package Controller;
 
+import Model.Language;
 import Model.Plant;
 import Model.PlantRepository;
 import View.GuestView;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
-public class GuestController {
+public class GuestController implements Observer {
     private PlantRepository plantRepo;
     private GuestView guestView;
+
+    private Language language;
 
     public GuestController() {
         this.plantRepo = new PlantRepository();
         this.guestView = new GuestView();
+        this.language = new Language();
+        language.addObserver(this);
         populateTable();
 
         this.guestView.getBtnSearch().addActionListener(e -> searchClick());
@@ -21,6 +28,16 @@ public class GuestController {
         this.guestView.getBtnRefresh().addActionListener(e -> populateTable());
 
         this.guestView.getBtnClean().addActionListener(e -> cleanFieldsClick());
+
+        this.guestView.getBtnRo().addActionListener(e -> language.setLanguage("ro"));
+
+        this.guestView.getBtnEn().addActionListener(e -> language.setLanguage("en"));
+
+        this.guestView.getBtnEs().addActionListener(e -> language.setLanguage("es"));
+
+        this.guestView.getBtnFr().addActionListener(e -> language.setLanguage("fr"));
+
+        updateView();
     }
 
     private void populateTable(){
@@ -88,4 +105,20 @@ public class GuestController {
     }
 
     private void setFilter(String filter){guestView.getTxtFilter().setText(filter);}
+
+    public void update(Observable o, Object arg) {
+        updateView();
+    }
+
+    private void updateView() {
+        guestView.getWelcomeLabel().setText((language.getString("welcomeLabel")));
+        guestView.getFilterDataLabel().setText((language.getString("filterDataLabel")));
+        guestView.getCriteriaLabel().setText((language.getString("criteriaLabel")));
+        guestView.getFilterLabel().setText((language.getString("filterLabel")));
+
+
+        guestView.getBtnClean().setText(language.getString("cleanButton"));
+        guestView.getBtnSearch().setText(language.getString("searchButton"));
+        guestView.getBtnRefresh().setText(language.getString("refreshButton"));
+    }
 }

@@ -16,7 +16,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="ad84b" class="javax.swing.JLabel">
+          <component id="ad84b" class="javax.swing.JLabel" binding="welcomeLabel">
             <constraints>
               <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -80,7 +80,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="c9ead" class="javax.swing.JLabel">
+          <component id="c9ead" class="javax.swing.JLabel" binding="criteriaLabel">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -89,7 +89,7 @@
               <text value="Criteriu:"/>
             </properties>
           </component>
-          <component id="d4af8" class="javax.swing.JLabel">
+          <component id="d4af8" class="javax.swing.JLabel" binding="filterLabel">
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -98,7 +98,7 @@
               <text value="Filtru:"/>
             </properties>
           </component>
-          <component id="69374" class="javax.swing.JLabel">
+          <component id="69374" class="javax.swing.JLabel" binding="filterDataLabel">
             <constraints>
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
