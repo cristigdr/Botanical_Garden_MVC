@@ -1,22 +1,27 @@
 package Controller;
 
+import Model.Language;
 import Model.User;
 import Model.UserRepository;
-import View.AdminView;
-import View.EmployeeView;
 import View.LoginView;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Observable;
+import java.util.Observer;
 
-public class LoginController {
+public class LoginController implements Observer {
     private UserRepository userRepo;
     private LoginView loginView;
+    private Language language;
+
 
     public LoginController() {
         this.userRepo = new UserRepository();
         this.loginView = new LoginView();
+        this.language = new Language();
+        language.addObserver(this);
+
         this.loginView.getBtnLogin().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -38,6 +43,36 @@ public class LoginController {
                 btnGuestClick(e);
             }
         });
+
+        this.loginView.getBtnRo().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                language.setLanguage("ro");
+            }
+        });
+
+        this.loginView.getBtnEn().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                language.setLanguage("en");
+            }
+        });
+
+        this.loginView.getBtnEs().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                language.setLanguage("es");
+            }
+        });
+
+        this.loginView.getBtnFr().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                language.setLanguage("fr");
+            }
+        });
+
+        updateView();
 
     }
 
@@ -101,5 +136,20 @@ public class LoginController {
                 "Autentificare reușită!",
                 "Succes!",
                 JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void update(Observable o, Object arg) {
+        updateView();
+    }
+
+    private void updateView() {
+        // Update view components with translated text
+        loginView.getWelcomeLoginLabel().setText((language.getString("welcomeLabel")));
+        loginView.getPlzLoginLabel().setText((language.getString("plzLoginLabel")));
+        loginView.getUserLoginLabel().setText(language.getString("usernameLabel"));
+        loginView.getPasswordLoginLabel().setText(language.getString("passwordLabel"));
+        loginView.getBtnLogin().setText(language.getString("loginButton"));
+        loginView.getBtnCancel().setText((language.getString("cancelButton")));
+        loginView.getBtnGuest().setText((language.getString("guestButton")));
     }
 }
