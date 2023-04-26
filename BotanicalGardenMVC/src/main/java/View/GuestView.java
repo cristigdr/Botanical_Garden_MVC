@@ -24,7 +24,7 @@ public class GuestView extends JFrame{
         setContentPane(mainPanelGuest);
         setTitle("Guest");
         setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-        setSize(500, 400);
+        setSize(550, 400);
         setLocationRelativeTo(null);
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setVisible(true);
