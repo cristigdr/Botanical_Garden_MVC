@@ -7,7 +7,7 @@ public class Language extends Observable {
     private ResourceBundle resourceBundle;
 
     public Language() {
-        setLanguage("ro"); 
+        setLanguage("ro");
     }
 
     public void setLanguage(String languageCode) {
