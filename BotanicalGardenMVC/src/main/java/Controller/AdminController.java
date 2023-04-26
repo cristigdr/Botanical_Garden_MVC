@@ -8,7 +8,6 @@ import View.AdminView;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.List;
@@ -163,10 +162,10 @@ public class AdminController implements Observer {
             }
         };
 
-        model.addColumn("ID");
-        model.addColumn("User");
-        model.addColumn("Parola");
-        model.addColumn("Rol");
+        model.addColumn(language.getString("idLabel"));
+        model.addColumn(language.getString("userLabel"));
+        model.addColumn(language.getString("passwordLabel"));
+        model.addColumn(language.getString("roleLabel"));
 
         for(User u : users){
             model.addRow(new Object[]{u.getId(), u.getUser(), u.getPassword(), u.getRole()});
@@ -198,10 +197,30 @@ public class AdminController implements Observer {
         adminView.getUserLabel().setText((language.getString("userLabel")));
         adminView.getPasswordLabel().setText((language.getString("passwordLabel")));
         adminView.getRoleLabel().setText((language.getString("roleLabel")));
+
         adminView.getBtnInsert().setText(language.getString("insertButton"));
         adminView.getBtnUpdate().setText(language.getString("updateButton"));
         adminView.getBtnDelete().setText(language.getString("deleteButton"));
         adminView.getBtnClean().setText(language.getString("cleanButton"));
+
+        //combobox
+        adminView.getComboRole().removeAllItems();
+        String[] roles = {language.getString("adminLabel"), language.getString("empLabel")};
+        for (String role : roles) {
+            adminView.getComboRole().addItem(role);
+        }
+
+        //column headers
+        String[] columnNames = {
+                language.getString("idLabel"),
+                language.getString("userLabel"),
+                language.getString("passwordLabel"),
+                language.getString("roleLabel")
+        };
+        DefaultTableModel model = (DefaultTableModel) adminView.getTabUser().getModel();
+        model.setColumnIdentifiers(columnNames);
+
+
     }
 
 }

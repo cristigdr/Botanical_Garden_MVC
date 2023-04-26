@@ -91,10 +91,7 @@
             </constraints>
             <properties>
               <font name="Tahoma"/>
-              <model>
-                <item value="admin"/>
-                <item value="angajat"/>
-              </model>
+              <model/>
             </properties>
           </component>
           <component id="4d504" class="javax.swing.JLabel" binding="idLabel">
