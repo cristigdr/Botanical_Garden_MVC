@@ -49,7 +49,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="795ee" class="javax.swing.JLabel">
+              <component id="795ee" class="javax.swing.JLabel" binding="welcomeLoginLabel">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -58,7 +58,7 @@
                   <text value="Bun venit!"/>
                 </properties>
               </component>
-              <component id="6a0da" class="javax.swing.JLabel">
+              <component id="6a0da" class="javax.swing.JLabel" binding="plzLoginLabel">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -93,7 +93,7 @@
                 </constraints>
                 <properties/>
               </component>
-              <component id="385a1" class="javax.swing.JLabel">
+              <component id="385a1" class="javax.swing.JLabel" binding="userLoginLabel">
                 <constraints>
                   <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>
@@ -102,7 +102,7 @@
                   <text value="Utilizator:"/>
                 </properties>
               </component>
-              <component id="18fa2" class="javax.swing.JLabel">
+              <component id="18fa2" class="javax.swing.JLabel" binding="passwordLoginLabel">
                 <constraints>
                   <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
                 </constraints>

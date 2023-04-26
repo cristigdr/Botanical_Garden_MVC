@@ -12,6 +12,10 @@ public class LoginView extends JFrame{
     private JButton btnLogin;
     private JButton btnGuest;
     private JButton btnCancel;
+    private JLabel welcomeLoginLabel;
+    private JLabel plzLoginLabel;
+    private JLabel userLoginLabel;
+    private JLabel passwordLoginLabel;
 
     public LoginView() {
         super();
@@ -48,5 +52,21 @@ public class LoginView extends JFrame{
 
     public JButton getBtnCancel() {
         return btnCancel;
+    }
+
+    public JLabel getWelcomeLoginLabel() {
+        return welcomeLoginLabel;
+    }
+
+    public JLabel getPlzLoginLabel() {
+        return plzLoginLabel;
+    }
+
+    public JLabel getUserLoginLabel() {
+        return userLoginLabel;
+    }
+
+    public JLabel getPasswordLoginLabel() {
+        return passwordLoginLabel;
     }
 }
