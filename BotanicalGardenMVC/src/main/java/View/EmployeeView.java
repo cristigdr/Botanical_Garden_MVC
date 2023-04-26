@@ -26,6 +26,10 @@ public class EmployeeView extends JFrame{
     private JButton btnUpdate;
     private JButton btnDelete;
     private JScrollPane scrollPane;
+    private JButton btnRo;
+    private JButton btnEn;
+    private JButton btnEs;
+    private JButton btnFr;
     private ButtonGroup btnGrZone;
     private ButtonGroup btnGrCarnivorous;
     private DefaultTableModel model = new DefaultTableModel();

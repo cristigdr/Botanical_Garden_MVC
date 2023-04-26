@@ -2,7 +2,6 @@ package View;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
 
 public class GuestView extends JFrame{
     private JPanel mainPanelGuest;
@@ -13,6 +12,10 @@ public class GuestView extends JFrame{
     private JButton btnRefresh;
     private JButton btnClean;
     private JScrollPane scrollPane;
+    private JButton btnRo;
+    private JButton btnEn;
+    private JButton btnEs;
+    private JButton btnFr;
     private DefaultTableModel model = new DefaultTableModel();
 
 

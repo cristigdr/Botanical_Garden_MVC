@@ -16,6 +16,10 @@ public class AdminView extends JFrame{
     private JButton btnClean;
     private JTable tabUser;
     private JScrollPane scrollPane;
+    private JButton btnRo;
+    private JButton btnEn;
+    private JButton btnEs;
+    private JButton btnFr;
     private DefaultTableModel model = new DefaultTableModel();
 
 

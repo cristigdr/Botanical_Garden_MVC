@@ -14,10 +14,10 @@ public class LoginView extends JFrame{
     private JLabel plzLoginLabel;
     private JLabel userLoginLabel;
     private JLabel passwordLoginLabel;
-    private JButton roBtn;
-    private JButton button1;
-    private JButton button2;
-    private JButton button3;
+    private JButton btnRo;
+    private JButton btnEn;
+    private JButton btnEs;
+    private JButton btnFr;
 
     public LoginView() {
         super();

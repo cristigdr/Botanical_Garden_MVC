@@ -144,7 +144,7 @@
                   <text value="Vizualizare ca vizitator"/>
                 </properties>
               </component>
-              <component id="8f077" class="javax.swing.JButton" binding="roBtn">
+              <component id="8f077" class="javax.swing.JButton" binding="btnRo">
                 <constraints>
                   <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                     <maximum-size width="46" height="32"/>
@@ -155,7 +155,7 @@
                   <text value=""/>
                 </properties>
               </component>
-              <component id="d8ac1" class="javax.swing.JButton" binding="button1" default-binding="true">
+              <component id="d8ac1" class="javax.swing.JButton" binding="btnEn">
                 <constraints>
                   <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                     <maximum-size width="46" height="32"/>
@@ -166,7 +166,7 @@
                   <text value=""/>
                 </properties>
               </component>
-              <component id="cd495" class="javax.swing.JButton" binding="button2" default-binding="true">
+              <component id="cd495" class="javax.swing.JButton" binding="btnEs">
                 <constraints>
                   <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                     <maximum-size width="46" height="32"/>
@@ -177,7 +177,7 @@
                   <text value=""/>
                 </properties>
               </component>
-              <component id="23cb6" class="javax.swing.JButton" binding="button3" default-binding="true">
+              <component id="23cb6" class="javax.swing.JButton" binding="btnFr">
                 <constraints>
                   <grid row="2" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false">
                     <maximum-size width="46" height="32"/>
