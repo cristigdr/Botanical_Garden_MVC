@@ -16,7 +16,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="74561" class="javax.swing.JLabel">
+          <component id="74561" class="javax.swing.JLabel" binding="welcomeLabel">
             <constraints>
               <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -83,7 +83,7 @@
               <font name="Tahoma"/>
             </properties>
           </component>
-          <component id="8f360" class="javax.swing.JLabel">
+          <component id="8f360" class="javax.swing.JLabel" binding="criteriaLabel">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="5" use-parent-layout="false"/>
             </constraints>
@@ -92,7 +92,7 @@
               <text value="Criteriu:"/>
             </properties>
           </component>
-          <component id="b5238" class="javax.swing.JLabel">
+          <component id="b5238" class="javax.swing.JLabel" binding="filterLabel">
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -101,7 +101,7 @@
               <text value="Filtru:"/>
             </properties>
           </component>
-          <component id="e836c" class="javax.swing.JLabel">
+          <component id="e836c" class="javax.swing.JLabel" binding="filterDataLabel">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="9" use-parent-layout="false"/>
             </constraints>
@@ -255,7 +255,7 @@
               <font name="Tahoma"/>
             </properties>
           </component>
-          <component id="de93c" class="javax.swing.JLabel">
+          <component id="de93c" class="javax.swing.JLabel" binding="idLabel">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -264,7 +264,7 @@
               <text value="Id:"/>
             </properties>
           </component>
-          <component id="bbc51" class="javax.swing.JLabel">
+          <component id="bbc51" class="javax.swing.JLabel" binding="nameLabel">
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -273,7 +273,7 @@
               <text value="Denumire:"/>
             </properties>
           </component>
-          <component id="8919e" class="javax.swing.JLabel">
+          <component id="8919e" class="javax.swing.JLabel" binding="typeLabel">
             <constraints>
               <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -282,7 +282,7 @@
               <text value="Tip:"/>
             </properties>
           </component>
-          <component id="793de" class="javax.swing.JLabel">
+          <component id="793de" class="javax.swing.JLabel" binding="speciesLabel">
             <constraints>
               <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -345,7 +345,7 @@
               <text value="D"/>
             </properties>
           </component>
-          <component id="5aad2" class="javax.swing.JLabel">
+          <component id="5aad2" class="javax.swing.JLabel" binding="carnivorousLabel">
             <constraints>
               <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -354,7 +354,7 @@
               <text value="Plantă Carnivoră:"/>
             </properties>
           </component>
-          <component id="88942" class="javax.swing.JLabel">
+          <component id="88942" class="javax.swing.JLabel" binding="zoneLabel">
             <constraints>
               <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -363,7 +363,7 @@
               <text value="Zonă Gradină:"/>
             </properties>
           </component>
-          <component id="84ae6" class="javax.swing.JLabel">
+          <component id="84ae6" class="javax.swing.JLabel" binding="addPlantLabel">
             <constraints>
               <grid row="0" column="2" row-span="1" col-span="4" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>

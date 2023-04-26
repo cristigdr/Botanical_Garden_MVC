@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Language;
 import Model.Plant;
 import Model.PlantRepository;
 import Model.User;
@@ -10,16 +11,23 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.image.ImageObserver;
 import java.util.Enumeration;
 import java.util.List;
+import java.util.Observable;
+import java.util.Observer;
 
-public class EmployeeController {
+public class EmployeeController implements Observer {
     private PlantRepository plantRepo;
     private EmployeeView empView;
+    private Language language;
 
     public EmployeeController() {
         this.plantRepo = new PlantRepository();
         this.empView = new EmployeeView();
+        this.language = new Language();
+        language.addObserver(this);
+
         populateTable();
 
         empView.getDaRadioButton().setActionCommand("Da");
@@ -45,6 +53,15 @@ public class EmployeeController {
             }
         });
 
+        this.empView.getBtnRo().addActionListener(e -> language.setLanguage("ro"));
+
+        this.empView.getBtnEn().addActionListener(e -> language.setLanguage("en"));
+
+        this.empView.getBtnEs().addActionListener(e -> language.setLanguage("es"));
+
+        this.empView.getBtnFr().addActionListener(e -> language.setLanguage("fr"));
+
+        updateView();
 
     }
 
@@ -272,6 +289,32 @@ public class EmployeeController {
                 "Operație reușită!",
                 "Succes!",
                 JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    public void update(Observable o, Object arg) {
+        updateView();
+    }
+
+    private void updateView() {
+        empView.getWelcomeLabel().setText((language.getString("welcomeLabel")));
+        empView.getFilterDataLabel().setText((language.getString("filterDataLabel")));
+        empView.getCriteriaLabel().setText((language.getString("criteriaLabel")));
+        empView.getFilterLabel().setText((language.getString("filterLabel")));
+        empView.getAddPlantLabel().setText((language.getString("addPlantLabel")));
+        empView.getIdLabel().setText((language.getString("idLabel")));
+        empView.getNameLabel().setText((language.getString("nameLabel")));
+        empView.getTypeLabel().setText((language.getString("typeLabel")));
+        empView.getSpeciesLabel().setText((language.getString("speciesLabel")));
+        empView.getCarnivorousLabel().setText((language.getString("carnivorousLabel")));
+        empView.getZoneLabel().setText((language.getString("zoneLabel")));
+
+        empView.getBtnClean().setText(language.getString("cleanButton"));
+        empView.getBtnSearch().setText(language.getString("searchButton"));
+        empView.getBtnRefresh().setText(language.getString("refreshButton"));
+        empView.getBtnInsert().setText(language.getString("insertButton"));
+        empView.getBtnUpdate().setText(language.getString("updateButton"));
+        empView.getBtnDelete().setText(language.getString("deleteButton"));
+
     }
 
 }

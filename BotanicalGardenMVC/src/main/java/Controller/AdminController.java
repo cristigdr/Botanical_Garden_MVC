@@ -45,6 +45,7 @@ public class AdminController implements Observer {
                 showSelectedRowData();
             }
         });
+
         this.adminView.getBtnRo().addActionListener(e -> language.setLanguage("ro"));
 
         this.adminView.getBtnEn().addActionListener(e -> language.setLanguage("en"));

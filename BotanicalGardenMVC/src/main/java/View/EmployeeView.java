@@ -30,6 +30,17 @@ public class EmployeeView extends JFrame{
     private JButton btnEn;
     private JButton btnEs;
     private JButton btnFr;
+    private JLabel welcomeLabel;
+    private JLabel filterDataLabel;
+    private JLabel criteriaLabel;
+    private JLabel filterLabel;
+    private JLabel addPlantLabel;
+    private JLabel idLabel;
+    private JLabel nameLabel;
+    private JLabel typeLabel;
+    private JLabel speciesLabel;
+    private JLabel carnivorousLabel;
+    private JLabel zoneLabel;
     private ButtonGroup btnGrZone;
     private ButtonGroup btnGrCarnivorous;
     private DefaultTableModel model = new DefaultTableModel();
@@ -165,5 +176,63 @@ public class EmployeeView extends JFrame{
         return tabPlant.getValueAt(rowIndex, 5).toString();
     }
 
+    public JButton getBtnRo() {
+        return btnRo;
+    }
 
+    public JButton getBtnEn() {
+        return btnEn;
+    }
+
+    public JButton getBtnEs() {
+        return btnEs;
+    }
+
+    public JButton getBtnFr() {
+        return btnFr;
+    }
+
+    public JLabel getWelcomeLabel() {
+        return welcomeLabel;
+    }
+
+    public JLabel getFilterDataLabel() {
+        return filterDataLabel;
+    }
+
+    public JLabel getCriteriaLabel() {
+        return criteriaLabel;
+    }
+
+    public JLabel getFilterLabel() {
+        return filterLabel;
+    }
+
+    public JLabel getAddPlantLabel() {
+        return addPlantLabel;
+    }
+
+    public JLabel getIdLabel() {
+        return idLabel;
+    }
+
+    public JLabel getNameLabel() {
+        return nameLabel;
+    }
+
+    public JLabel getTypeLabel() {
+        return typeLabel;
+    }
+
+    public JLabel getSpeciesLabel() {
+        return speciesLabel;
+    }
+
+    public JLabel getCarnivorousLabel() {
+        return carnivorousLabel;
+    }
+
+    public JLabel getZoneLabel() {
+        return zoneLabel;
+    }
 }
