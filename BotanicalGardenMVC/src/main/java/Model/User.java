@@ -15,7 +15,6 @@ public class User {
     @Column(name = "parola", nullable = false)
     private String password;
     @Column(name = "rol", nullable = false, columnDefinition = "VARCHAR(20)")
-    @Check(constraints = "rol IN ('administrator', 'angajat')")
     private String role;
 
 
