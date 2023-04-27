@@ -16,9 +16,9 @@ import java.util.Observer;
 
 public class AdminController implements Observer {
 
-    private UserRepository userRepo;
-    private AdminView adminView;
-    private Language language;
+    final private UserRepository userRepo;
+    final private AdminView adminView;
+    final private Language language;
 
 
     public AdminController() {

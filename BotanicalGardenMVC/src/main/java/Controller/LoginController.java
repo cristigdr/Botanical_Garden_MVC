@@ -6,14 +6,13 @@ import Model.UserRepository;
 import View.LoginView;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.Observable;
 import java.util.Observer;
 
 public class LoginController implements Observer {
-    private UserRepository userRepo;
-    private LoginView loginView;
-    private Language language;
+    final private UserRepository userRepo;
+    final private LoginView loginView;
+    final private Language language;
 
 
     public LoginController() {
@@ -22,55 +21,19 @@ public class LoginController implements Observer {
         this.language = new Language();
         language.addObserver(this);
 
-        this.loginView.getBtnLogin().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                btnLoginClick(e);
-            }
+        this.loginView.getBtnLogin().addActionListener(this::btnLoginClick);
 
-        });
+        this.loginView.getBtnCancel().addActionListener(this::btnCancelClick);
 
-        this.loginView.getBtnCancel().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                btnCancelClick(e);
-            }
-        });
+        this.loginView.getBtnGuest().addActionListener(this::btnGuestClick);
 
-        this.loginView.getBtnGuest().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                btnGuestClick(e);
-            }
-        });
+        this.loginView.getBtnRo().addActionListener(e -> language.setLanguage("ro"));
 
-        this.loginView.getBtnRo().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                language.setLanguage("ro");
-            }
-        });
+        this.loginView.getBtnEn().addActionListener(e -> language.setLanguage("en"));
 
-        this.loginView.getBtnEn().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                language.setLanguage("en");
-            }
-        });
+        this.loginView.getBtnEs().addActionListener(e -> language.setLanguage("es"));
 
-        this.loginView.getBtnEs().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                language.setLanguage("es");
-            }
-        });
-
-        this.loginView.getBtnFr().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                language.setLanguage("fr");
-            }
-        });
+        this.loginView.getBtnFr().addActionListener(e -> language.setLanguage("fr"));
 
         updateView();
 

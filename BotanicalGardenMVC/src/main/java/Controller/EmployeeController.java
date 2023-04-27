@@ -12,9 +12,9 @@ import java.awt.event.MouseEvent;
 import java.util.*;
 
 public class EmployeeController implements Observer {
-    private PlantRepository plantRepo;
-    private EmployeeView empView;
-    private Language language;
+    final private PlantRepository plantRepo;
+    final private EmployeeView empView;
+    final private Language language;
 
     public EmployeeController() {
         this.plantRepo = new PlantRepository();
@@ -69,12 +69,12 @@ public class EmployeeController implements Observer {
             }
         };
 
-        model.addColumn("ID");
-        model.addColumn("Denumire");
-        model.addColumn("Tip");
-        model.addColumn("Specie");
-        model.addColumn("Planta Carnivora");
-        model.addColumn("Zona Gradina Botanica");
+        model.addColumn(language.getString("idLabelTab"));
+        model.addColumn(language.getString("nameLabelTab"));
+        model.addColumn(language.getString("typeLabelTab"));
+        model.addColumn(language.getString("speciesLabelTab"));
+        model.addColumn(language.getString("carnivorousLabelTab"));
+        model.addColumn(language.getString("zoneLabelTab"));
 
         for (Plant p : plants) {
             model.addRow(new Object[]{p.getId(), p.getName(), p.getType(), p.getSpecies(), p.getCarnivorous(), p.getZone()});
@@ -325,6 +325,7 @@ public class EmployeeController implements Observer {
         String[] columnNames = {
                 language.getString("idLabelTab"),
                 language.getString("nameLabelTab"),
+                language.getString("typeLabelTab"),
                 language.getString("speciesLabelTab"),
                 language.getString("nameLabelTab"),
                 language.getString("carnivorousLabelTab"),

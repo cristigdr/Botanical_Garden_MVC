@@ -11,10 +11,10 @@ import java.util.Observable;
 import java.util.Observer;
 
 public class GuestController implements Observer {
-    private PlantRepository plantRepo;
-    private GuestView guestView;
+    final private PlantRepository plantRepo;
+    final private GuestView guestView;
 
-    private Language language;
+    final private Language language;
 
     public GuestController() {
         this.plantRepo = new PlantRepository();
@@ -133,6 +133,7 @@ public class GuestController implements Observer {
         String[] columnNames = {
                 language.getString("idLabelTab"),
                 language.getString("nameLabelTab"),
+                language.getString("typeLabelTab"),
                 language.getString("speciesLabelTab"),
                 language.getString("nameLabelTab"),
                 language.getString("carnivorousLabelTab"),
