@@ -318,7 +318,8 @@ public class EmployeeController implements Observer {
         }
 
         //radio buttons carnivorous
-
+        empView.getDaRadioButton().setText(language.getString("yesLabel"));
+        empView.getNuRadioButton().setText((language.getString("noLabel")));
     }
 
     public String getCriteriaValue(){
