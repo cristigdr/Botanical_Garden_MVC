@@ -60,13 +60,13 @@ public class AdminController implements Observer {
         User u = new User(adminView.getTxtUser().getText(), adminView.getTxtPassword().getText(), getRolString());
 
         if(userRepo.checkIfUserExists(u)){
-            mesajEroare();
+            errorMessage();
         }else{
             boolean inserted = userRepo.saveUser(u);
             if(inserted){
-                mesajSucces();
+                successMessage();
             } else {
-                mesajEroare();
+                errorMessage();
             }
         }
         refreshTable();
@@ -77,13 +77,13 @@ public class AdminController implements Observer {
         User u = new User(adminView.getTxtUser().getText(), adminView.getTxtPassword().getText(), getRolString());
 
         if(userRepo.checkIfUserExists(u)){
-            mesajEroare();
+            errorMessage();
         }else{
             boolean updated = userRepo.updateUser(u, adminView.getTxtId().getText());
             if(updated){
-                mesajSucces();
+                successMessage();
             } else {
-                mesajEroare();
+                errorMessage();
             }
         }
         refreshTable();
@@ -93,9 +93,9 @@ public class AdminController implements Observer {
     private void deleteUserClick(ActionEvent e){
         boolean deleted = userRepo.deleteUser(adminView.getTxtId().getText());
         if(deleted){
-            mesajSucces();
+            successMessage();
         } else{
-            mesajEroare();
+            errorMessage();
         }
         refreshTable();
         clearFields();
@@ -127,17 +127,17 @@ public class AdminController implements Observer {
         return data;
     }
 
-    private void mesajEroare() {
+    private void errorMessage() {
         JOptionPane.showMessageDialog(adminView,
-                "Operație invalidă",
-                "Încearcă din nou",
+                language.getString("invalidOperationMessage"),
+                language.getString("invalidOperationTitle"),
                 JOptionPane.ERROR_MESSAGE);
     }
 
-    private void mesajSucces() {
+    private void successMessage() {
         JOptionPane.showMessageDialog(adminView,
-                "Operație reușită!",
-                "Succes!",
+                language.getString("operationSuccessfulMessage"),
+                language.getString("operationSuccessfulTitle"),
                 JOptionPane.INFORMATION_MESSAGE);
     }
 

@@ -273,15 +273,15 @@ public class EmployeeController implements Observer {
 
     private void errorMessage() {
         JOptionPane.showMessageDialog(empView,
-                "Operație invalidă",
-                "Încearcă din nou",
+                language.getString("invalidOperationMessage"),
+                language.getString("invalidOperationTitle"),
                 JOptionPane.ERROR_MESSAGE);
     }
 
     private void successMessage() {
         JOptionPane.showMessageDialog(empView,
-                "Operație reușită!",
-                "Succes!",
+                language.getString("operationSuccessfulMessage"),
+                language.getString("operationSuccessfulTitle"),
                 JOptionPane.INFORMATION_MESSAGE);
     }
 
