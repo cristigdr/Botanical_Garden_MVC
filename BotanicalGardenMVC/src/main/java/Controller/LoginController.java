@@ -85,16 +85,16 @@ public class LoginController implements Observer {
 
 
         if (u == null)
-            mesajEroare();
+            errorMessage();
         else{
             if(u.getRole().equals("admin"))
             {
-                mesajSucces();
+                successMessage();
                 setAdminView();
             }
             else if (u.getRole().equals("angajat"))
             {
-                mesajSucces();
+                successMessage();
                 setEmployeeView();
             }
 
@@ -124,17 +124,17 @@ public class LoginController implements Observer {
         loginView.dispose();
     }
 
-    public void mesajEroare() {
+    public void errorMessage() {
         JOptionPane.showMessageDialog(loginView,
-                "Utilizator sau parolă invalidă",
-                "Încearcă din nou",
+                language.getString("invalidLoginMessage"),
+                language.getString("invalidLoginTitle"),
                 JOptionPane.ERROR_MESSAGE);
     }
 
-    public void mesajSucces() {
+    public void successMessage() {
         JOptionPane.showMessageDialog(loginView,
-                "Autentificare reușită!",
-                "Succes!",
+                language.getString("loginSuccessMessage"),
+                language.getString("loginSuccessTitle"),
                 JOptionPane.INFORMATION_MESSAGE);
     }
 
@@ -143,11 +143,11 @@ public class LoginController implements Observer {
     }
 
     private void updateView() {
-        // Update view components with translated text
         loginView.getWelcomeLoginLabel().setText((language.getString("welcomeLabel")));
         loginView.getPlzLoginLabel().setText((language.getString("plzLoginLabel")));
         loginView.getUserLoginLabel().setText(language.getString("usernameLabel"));
         loginView.getPasswordLoginLabel().setText(language.getString("passwordLabel"));
+
         loginView.getBtnLogin().setText(language.getString("loginButton"));
         loginView.getBtnCancel().setText((language.getString("cancelButton")));
         loginView.getBtnGuest().setText((language.getString("guestButton")));
