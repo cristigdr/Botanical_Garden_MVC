@@ -73,12 +73,12 @@ public class GuestController implements Observer {
             }
         };
 
-        model.addColumn("ID");
-        model.addColumn("Denumire");
-        model.addColumn("Tip");
-        model.addColumn("Specie");
-        model.addColumn("Planta Carnivora");
-        model.addColumn("Zona Gradina Botanica");
+        model.addColumn(language.getString("idLabelTab"));
+        model.addColumn(language.getString("nameLabelTab"));
+        model.addColumn(language.getString("typeLabelTab"));
+        model.addColumn(language.getString("speciesLabelTab"));
+        model.addColumn(language.getString("carnivorousLabelTab"));
+        model.addColumn(language.getString("zoneLabelTab"));
 
         for (Plant p : plants) {
             model.addRow(new Object[]{p.getId(), p.getName(), p.getType(), p.getSpecies(), p.getCarnivorous(), p.getZone()});
@@ -128,6 +128,18 @@ public class GuestController implements Observer {
         for (String criteria : criterias) {
             guestView.getComboCriteria().addItem(criteria);
         }
+
+        //column headers
+        String[] columnNames = {
+                language.getString("idLabelTab"),
+                language.getString("nameLabelTab"),
+                language.getString("speciesLabelTab"),
+                language.getString("nameLabelTab"),
+                language.getString("carnivorousLabelTab"),
+                language.getString("zoneLabelTab")
+        };
+        DefaultTableModel model = (DefaultTableModel) guestView.getTabPlant().getModel();
+        model.setColumnIdentifiers(columnNames);
     }
 
     public String getCriteriaValue(){
