@@ -3,19 +3,13 @@ package Controller;
 import Model.Language;
 import Model.Plant;
 import Model.PlantRepository;
-import Model.User;
 import View.EmployeeView;
-import View.GuestView;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.image.ImageObserver;
-import java.util.Enumeration;
-import java.util.List;
-import java.util.Observable;
-import java.util.Observer;
+import java.util.*;
 
 public class EmployeeController implements Observer {
     private PlantRepository plantRepo;
@@ -88,7 +82,7 @@ public class EmployeeController implements Observer {
         setTable(model);
     }
 
-    private void searchClick(){List<Plant> plants = plantRepo.filterPlants(getCriteriaString(), empView.getTxtFilter().getText());
+    private void searchClick(){List<Plant> plants = plantRepo.filterPlants(getCriteriaValue(), empView.getTxtFilter().getText());
 
         DefaultTableModel model = new DefaultTableModel() {
             @Override
@@ -315,6 +309,29 @@ public class EmployeeController implements Observer {
         empView.getBtnUpdate().setText(language.getString("updateButton"));
         empView.getBtnDelete().setText(language.getString("deleteButton"));
 
+        //combobox
+        empView.getComboCriteria().removeAllItems();
+
+        String[] criterias = {language.getString("typeCBLabel"), language.getString("speciesCBLabel"), language.getString("carnivorousCBLabel"), language.getString("zoneCBLabel")};
+        for (String criteria : criterias) {
+            empView.getComboCriteria().addItem(criteria);
+        }
+    }
+
+    public String getCriteriaValue(){
+        if(getCriteriaString().equals(language.getString("typeCBLabel"))) {
+            return "tip";
+        }
+        if(getCriteriaString().equals(language.getString("speciesCBLabel"))) {
+            return "specie";
+        }
+        if(getCriteriaString().equals(language.getString("carnivorousCBLabel"))) {
+            return "planta_carnivora";
+        }
+        if(getCriteriaString().equals(language.getString("zoneCBLabel"))) {
+            return "zona_gradina_botanica";
+        }
+        return "no criteria choosed";
     }
 
 }

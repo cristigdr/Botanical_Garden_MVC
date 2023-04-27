@@ -64,7 +64,7 @@ public class GuestController implements Observer {
     }
 
     private void searchClick(){
-        List<Plant> plants = plantRepo.filterPlants(getCriteriaString(), guestView.getTxtFilter().getText());
+        List<Plant> plants = plantRepo.filterPlants(getCriteriaValue(), guestView.getTxtFilter().getText());
 
         DefaultTableModel model = new DefaultTableModel() {
             @Override
@@ -120,5 +120,29 @@ public class GuestController implements Observer {
         guestView.getBtnClean().setText(language.getString("cleanButton"));
         guestView.getBtnSearch().setText(language.getString("searchButton"));
         guestView.getBtnRefresh().setText(language.getString("refreshButton"));
+
+        //combobox
+        guestView.getComboCriteria().removeAllItems();
+
+        String[] criterias = {language.getString("typeCBLabel"), language.getString("speciesCBLabel"), language.getString("carnivorousCBLabel"), language.getString("zoneCBLabel")};
+        for (String criteria : criterias) {
+            guestView.getComboCriteria().addItem(criteria);
+        }
+    }
+
+    public String getCriteriaValue(){
+        if(getCriteriaString().equals(language.getString("typeCBLabel"))) {
+            return "tip";
+        }
+        if(getCriteriaString().equals(language.getString("speciesCBLabel"))) {
+            return "specie";
+        }
+        if(getCriteriaString().equals(language.getString("carnivorousCBLabel"))) {
+            return "planta_carnivora";
+        }
+        if(getCriteriaString().equals(language.getString("zoneCBLabel"))) {
+            return "zona_gradina_botanica";
+        }
+        return "no criteria choosed";
     }
 }
