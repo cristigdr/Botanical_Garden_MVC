@@ -316,6 +316,9 @@ public class EmployeeController implements Observer {
         for (String criteria : criterias) {
             empView.getComboCriteria().addItem(criteria);
         }
+
+        //radio buttons carnivorous
+
     }
 
     public String getCriteriaValue(){
