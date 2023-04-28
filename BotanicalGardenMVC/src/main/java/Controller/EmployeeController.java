@@ -327,7 +327,6 @@ public class EmployeeController implements Observer {
                 language.getString("nameLabelTab"),
                 language.getString("typeLabelTab"),
                 language.getString("speciesLabelTab"),
-                language.getString("nameLabelTab"),
                 language.getString("carnivorousLabelTab"),
                 language.getString("zoneLabelTab")
         };

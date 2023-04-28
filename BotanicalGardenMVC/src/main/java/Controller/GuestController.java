@@ -50,12 +50,12 @@ public class GuestController implements Observer {
             }
         };
 
-        model.addColumn("ID");
-        model.addColumn("Denumire");
-        model.addColumn("Tip");
-        model.addColumn("Specie");
-        model.addColumn("Planta Carnivora");
-        model.addColumn("Zona Gradina Botanica");
+        model.addColumn(language.getString("idLabelTab"));
+        model.addColumn(language.getString("nameLabelTab"));
+        model.addColumn(language.getString("typeLabelTab"));
+        model.addColumn(language.getString("speciesLabelTab"));
+        model.addColumn(language.getString("carnivorousLabelTab"));
+        model.addColumn(language.getString("zoneLabelTab"));
 
         for (Plant p : plants) {
             model.addRow(new Object[]{p.getId(), p.getName(), p.getType(), p.getSpecies(), p.getCarnivorous(), p.getZone()});
@@ -135,7 +135,6 @@ public class GuestController implements Observer {
                 language.getString("nameLabelTab"),
                 language.getString("typeLabelTab"),
                 language.getString("speciesLabelTab"),
-                language.getString("nameLabelTab"),
                 language.getString("carnivorousLabelTab"),
                 language.getString("zoneLabelTab")
         };
