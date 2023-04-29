@@ -95,7 +95,7 @@ public class GuestController implements Observer {
         guestView.getScrollPane().setViewport(viewport);
     }
 
-    public String getCriteriaString(){
+    private String getCriteriaString(){
         String data = null;
         Object selectedItem = guestView.getComboCriteria().getSelectedItem();
         if (selectedItem != null) {
@@ -142,7 +142,7 @@ public class GuestController implements Observer {
         model.setColumnIdentifiers(columnNames);
     }
 
-    public String getCriteriaValue(){
+    private String getCriteriaValue(){
         if(getCriteriaString().equals(language.getString("typeCBLabel"))) {
             return "tip";
         }

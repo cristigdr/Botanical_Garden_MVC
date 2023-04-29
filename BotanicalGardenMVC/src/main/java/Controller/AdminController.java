@@ -118,7 +118,7 @@ public class AdminController implements Observer {
 
     }
 
-    public String getRolString(){
+    private String getRolString(){
         String data = null;
         Object selectedItem = adminView.getComboRole().getSelectedItem();
         if (selectedItem != null) {

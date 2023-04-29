@@ -72,29 +72,29 @@ public class LoginController implements Observer {
         setGuestView();
     }
 
-    public void setAdminView() {
+    private void setAdminView() {
         AdminController adminController = new AdminController();
         loginView.dispose();
     }
 
-    public void setEmployeeView() {
+    private void setEmployeeView() {
         EmployeeController empController = new EmployeeController();
         loginView.dispose();
     }
 
-    public void setGuestView() {
+    private void setGuestView() {
         GuestController guestController = new GuestController();
         loginView.dispose();
     }
 
-    public void errorMessage() {
+    private void errorMessage() {
         JOptionPane.showMessageDialog(loginView,
                 language.getString("invalidLoginMessage"),
                 language.getString("invalidLoginTitle"),
                 JOptionPane.ERROR_MESSAGE);
     }
 
-    public void successMessage() {
+    private void successMessage() {
         JOptionPane.showMessageDialog(loginView,
                 language.getString("loginSuccessMessage"),
                 language.getString("loginSuccessTitle"),

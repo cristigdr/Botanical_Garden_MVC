@@ -189,7 +189,7 @@ public class EmployeeController implements Observer {
         empView.getScrollPane().setViewport(viewport);
     }
 
-    public String getCriteriaString(){
+    private String getCriteriaString(){
         String data = null;
         Object selectedItem = empView.getComboCriteria().getSelectedItem();
         if (selectedItem != null) {
@@ -198,7 +198,7 @@ public class EmployeeController implements Observer {
         return data;
     }
 
-    public String getStringCarn() {
+    private String getStringCarn() {
         {
             for (Enumeration<AbstractButton> buttons = empView.getBtnGrCarnivorous().getElements(); buttons.hasMoreElements(); ) {
                 AbstractButton button = buttons.nextElement();
@@ -251,7 +251,7 @@ public class EmployeeController implements Observer {
         }
     }
 
-    public void setBtnGrCarn(String carn) {
+    private void setBtnGrCarn(String carn) {
         if (carn.equals("Da")) {
             empView.getDaRadioButton().setSelected(true);
         } else if (carn.equals("Nu")) {
@@ -259,7 +259,7 @@ public class EmployeeController implements Observer {
         }
     }
 
-    public void setBtnGrZone(String zone) {
+    private void setBtnGrZone(String zone) {
         if (zone.equals("A")) {
             empView.getaRadioButton().setSelected(true);
         } else if (zone.equals("B")) {
