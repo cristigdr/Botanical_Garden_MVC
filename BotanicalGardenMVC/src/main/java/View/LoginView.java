@@ -48,9 +48,6 @@ public class LoginView extends JFrame{
         return btnFr;
     }
 
-    public JPanel getMainPanelLogin() {
-        return mainPanelLogin;
-    }
 
     public JTextField getTxtUser() {
         return txtUser;

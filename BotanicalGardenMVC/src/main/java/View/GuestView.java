@@ -5,7 +5,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class GuestView extends JFrame{
     private JPanel mainPanelGuest;
-    private JComboBox comboCriteria;
+    private JComboBox<String> comboCriteria;
     private JTextField txtFilter;
     private JTable tabPlant;
     private JButton btnSearch;
@@ -34,11 +34,9 @@ public class GuestView extends JFrame{
         setVisible(true);
     }
 
-    public JPanel getMainPanelGuest() {
-        return mainPanelGuest;
-    }
 
-    public JComboBox getComboCriteria() {
+
+    public JComboBox<String> getComboCriteria() {
         return comboCriteria;
     }
 

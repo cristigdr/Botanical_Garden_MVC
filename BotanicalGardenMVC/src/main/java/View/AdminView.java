@@ -8,7 +8,7 @@ public class AdminView extends JFrame{
     private JTextField txtId;
     private JTextField txtUser;
     private JTextField txtPassword;
-    private JComboBox comboRole;
+    private JComboBox <String> comboRole;
     private JButton btnInsert;
     private JButton btnUpdate;
     private JButton btnDelete;
@@ -43,9 +43,6 @@ public class AdminView extends JFrame{
         return model;
     }
 
-    public JPanel getMainPanelAdmin() {
-        return mainPanelAdmin;
-    }
 
     public JTextField getTxtId() {
         return txtId;
@@ -59,7 +56,7 @@ public class AdminView extends JFrame{
         return txtPassword;
     }
 
-    public JComboBox getComboRole() {
+    public JComboBox<String> getComboRole() {
         return comboRole;
     }
 

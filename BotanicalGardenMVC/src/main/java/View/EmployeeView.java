@@ -2,7 +2,6 @@ package View;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
-import java.awt.*;
 
 public class EmployeeView extends JFrame{
     private JPanel mainPanelEmployee;
@@ -57,9 +56,7 @@ public class EmployeeView extends JFrame{
         setVisible(true);
     }
 
-    public JPanel getMainPanelEmployee() {
-        return mainPanelEmployee;
-    }
+
 
     public JComboBox<String> getComboCriteria() {
         return comboCriteria;

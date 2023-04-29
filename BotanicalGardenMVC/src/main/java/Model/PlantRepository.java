@@ -10,12 +10,8 @@ import java.util.List;
 
 public class PlantRepository {
 
-    private Plant plant;
 
     public PlantRepository() {
-    }
-    public PlantRepository(Plant plant) {
-        this.plant = plant;
     }
 
     public boolean savePlant(Plant plant){
@@ -82,7 +78,7 @@ public class PlantRepository {
 
     public List<Plant> getPlants() {
         Session session = Repository.getSessionFactory().openSession();
-        List<Plant> users = session.createQuery("from Plant", Plant.class).getResultList();
+        List<Plant> users = session.createQuery("from Plant ORDER BY type, species", Plant.class).getResultList();
         session.close();
         return users;
     }

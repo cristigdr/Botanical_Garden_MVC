@@ -10,11 +10,6 @@ public class Language extends Observable {
         this.resourceBundle = ResourceBundle.getBundle("messages", new Locale("ro"));
     }
 
-    public Language(String languageCode) {
-        this.resourceBundle = ResourceBundle.getBundle("messages", new Locale(languageCode));
-    }
-
-
 
     public void setLanguage(String languageCode) {
         Locale locale = new Locale(languageCode);

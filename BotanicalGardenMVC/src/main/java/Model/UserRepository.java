@@ -9,14 +9,8 @@ import org.hibernate.query.Query;
 import java.util.List;
 
 public class UserRepository {
-    private User user;
 
-    public UserRepository() {
-    }
-
-    public UserRepository(User user) {
-        this.user = user;
-    }
+    public UserRepository() {}
 
     public boolean saveUser(User u) {
         boolean saved = false;

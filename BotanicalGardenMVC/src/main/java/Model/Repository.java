@@ -33,7 +33,4 @@ public class Repository {
         return sessionFactory;
     }
 
-    public static void shutdown() {
-        getSessionFactory().close();
-    }
 }
